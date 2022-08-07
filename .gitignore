@@ -1,0 +1,9 @@
+*.jpeg
+*.png
+*.cdx
+*.docx
+*.rar
+*.enl
+
+manuscript.Data/
+Untitled.Data/
