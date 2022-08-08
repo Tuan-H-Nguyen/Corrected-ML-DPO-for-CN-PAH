@@ -194,28 +194,3 @@ def get_overlayer(sub,ref_seg):
 
 # %%
 #"""
-sample1 = "c1cc2c(cc1)c1cc3cc4cc5c(ccc6c(c(ccc56)C#N)C#N)cc4c(c3cc1c(c2)C#N)C#N"
-
-sample2 = "N#CC1=C(C=C(C=CC2=C3C=C4C(C=CC=C4C#N)=C2)C3=C5)C5=CC=C1"
-
-sample3 = "N#CC1=C2C=C(C=CC3=C4C5=C(C(C#N)=CC=C5)C6=C3C=CC=C6)C4=CC2=C(C=C(C=CC7=C8C=CC=C7C#N)C8=C9)C9=C1"
-
-sample4 = "c1cc2c(cc1)c1c(c(cc3ccccc13)C#N)cc2"
-
-sample = sample2
-
-sdpo_gen = AugDPO(
-    overlayer_effect=True,
-    size_effect=True)
-
-print(sdpo_gen.map(sample))
-
-from rdkit import Chem
-
-mol = Chem.MolFromSmiles(sample)
-
-mol
-#"""
-
-
-# %%

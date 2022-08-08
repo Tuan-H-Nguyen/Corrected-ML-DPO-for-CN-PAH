@@ -64,11 +64,11 @@ def train_model(
 
 def repeat_train_model(
     N, total, seed,
-    dpo_label = "Trun_DPO", sdpo_label = "SDPO"
+    dpo_label = "DPO", sdpo_label = "SDPO"
     ):
     
     np.random.seed(seed)
-    random_seeds = np.random.randint(0,10e6,10)
+    random_seeds = np.random.randint(0,10e6,N)
 
     overall_error = []
 
@@ -107,13 +107,13 @@ def repeat_train_model(
             DPO,SDPO,Y1,Y2,Y3,
             50,2)
 
-        dpo = test.loc[:,"Trun_DPO"]
+        dpo = test.loc[:,dpo_label]
 
         sdpo = test.loc[:,sdpo_label]
 
         error = []
         for i,elec_prop in enumerate(["BG","EA","IP"]):
-            dpo = test.loc[:,"Trun_DPO"]
+            dpo = test.loc[:,dpo_label]
             sdpo = test.loc[:,sdpo_label]
             y = np.array(test.loc[:,elec_prop]).reshape(-1)
 

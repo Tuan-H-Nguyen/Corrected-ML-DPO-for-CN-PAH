@@ -7,7 +7,7 @@ from gd_dpo.mod_GDDPO import modGD_DPO
 from trainer import repeat_train_model, train_model
 
 from MolGraph.poly_rings.DPO import DPO_generate
-from substituent import AugDPO
+from MolGraph.substituent import AugDPO
 
 parser = argparse.ArgumentParser(
     description="""For either training the model or predicting using the pre-trained model.
@@ -141,7 +141,8 @@ if int(args.train):
     model = repeat_train_model(
         N = args.num,
         total = data,
-        seed = args.seed
+        seed = args.seed, 
+        dpo_label = "DPO"
         )
     save_model(model,args.checkpoint)
 
