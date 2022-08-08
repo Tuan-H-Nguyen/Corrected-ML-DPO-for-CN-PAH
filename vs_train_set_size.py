@@ -88,8 +88,8 @@ for j in range(N):
             tasks = 3
         )
 
-        epochs = 50
-        lr = 2
+        epochs = 150
+        lr = 1
 
         model_mt = train_model(
             model_mt,
